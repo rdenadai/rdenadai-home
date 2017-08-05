@@ -62,4 +62,4 @@ CMD modprobe bcm2835-v4l2
 
 # main.py will run when container starts up on the device
 CMD ["python", "main.py"]
-CMD ["bash","main.sh"]
+CMD ["bash", "main.sh"]
