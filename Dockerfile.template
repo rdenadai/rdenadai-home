@@ -26,18 +26,14 @@ RUN apt-get install -y \
     libatlas-base-dev libatlas-dev \
     libatlas3-base \
     gfortran \
-    ffmpeg-dev ffmpeg-libs \
-    libwebp-dev libwebp \
+    libwebp-dev libwebp5 \
     ffmpeg \
     nmap \
-    libcec \
     net-tools \
     bluez \
     curl \
-    libsodium \
     openssh-client \
-    libffi \
-    glib
+    libffi-dev
 
 
 # Python build dependencies
