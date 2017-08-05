@@ -10,6 +10,8 @@ FROM resin/%%RESIN_MACHINE_NAME%%-python
 
 RUN apt-get update
 
+RUN apt-get install -y sqlite3 libsqlite3-dev
+
 # Python build dependencies
 RUN apt-get install -y \
     libmemcached-dev \
