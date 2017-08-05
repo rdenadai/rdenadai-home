@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6.1 (~/.pyenv/versions/3.6.1/bin/python)" project-jdk-type="Python SDK" />
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings is-module-sdk="true" working-directory="$USER_HOME$/.pyenv/versions/3.6.1/bin">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myWorkingDirectory" value="$USER_HOME$/.pyenv/versions/3.6.1/bin" />
+      </console-settings>
+    </option>
+    <option name="myShowDebugConsoleByDefault" value="true" />
+  </component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySupportGeventDebugging" value="true" />
+  </component>
+</project>
