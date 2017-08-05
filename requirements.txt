@@ -1,2 +1,4 @@
+xmltodict
+netdisco
 SQLAlchemy
 homeassistant
