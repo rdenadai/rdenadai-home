@@ -8,21 +8,37 @@ FROM resin/%%RESIN_MACHINE_NAME%%-python
 #    alsa-utils libasound2-dev && \
 #    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl libncurses5-dev xz-utils
+RUN apt-get update
 
-RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+# Python build dependencies
+RUN apt-get install -y \
+    libmemcached-dev \
+    zlib1g-dev \
+    libssl-dev \
+    python-dev \
+    build-essential \
+    libsqlite3-dev \
+    libbz2-dev \
+    libreadline6 \
+    libreadline6-dev \
+# pyenv dependencies
+    git
 
-RUN export PATH="./root/.pyenv/bin:$PATH"
-RUN eval "$(pyenv init -)"
-RUN eval "$(pyenv virtualenv-init -)"
-
-RUN pyenv update
-
+### PYENV ###
+ENV HOME /root
+ENV PYENV_ROOT $HOME/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+# see https://github.com/yyuu/pyenv-installer
+RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 RUN pyenv install 3.6.2
-
-RUN pyenv local 3.6.2
-
 RUN pyenv global 3.6.2
+RUN pyenv local 3.6.2
+RUN pyenv rehash
+RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> /root/.bash_profile
+RUN echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> /etc/.bash_profile
+RUN echo 'eval "$(pyenv init -)"' >> /etc/.bash_profile
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Set our working directory
 WORKDIR /usr/src/app
