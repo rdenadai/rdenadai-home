@@ -1,4 +1,10 @@
+psycopg2
+
 xmltodict
 netdisco
+aiohttp_cors
+cchardet
+uvloop
+aiodns
 SQLAlchemy
 homeassistant
