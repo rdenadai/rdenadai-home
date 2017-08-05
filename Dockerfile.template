@@ -58,6 +58,7 @@ COPY . ./
 ENV INITSYSTEM on
 
 CMD modprobe i2c-dev
+CMD modprobe bcm2835-v4l2
 
 # main.py will run when container starts up on the device
 CMD ["python", "main.py"]
