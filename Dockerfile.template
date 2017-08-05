@@ -10,6 +10,12 @@ FROM resin/%%RESIN_MACHINE_NAME%%-python
 
 RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 
+RUN echo 'export PATH="/root/.pyenv/bin:$PATH"' >> ~/.bashrc
+RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+RUN echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+
+RUN source ~/.bashrc
+
 RUN pyenv update
 
 RUN pyenv install 3.6.2
