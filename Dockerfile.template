@@ -57,6 +57,8 @@ COPY . ./
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
+CMD modprobe i2c-dev
+
 # main.py will run when container starts up on the device
 CMD ["python", "main.py"]
 CMD ["bash","main.sh"]
