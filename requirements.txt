@@ -7,6 +7,18 @@ gunicorn
 uwsgi
 
 numpy
+nltk
+textblob
+gensim
+Pillow
+cython
+scipy
+matplotlib
+pandas
+sympy
+scikit-learn
+scikit-image
+pyenchant
 
 aiohttp
 cchardet
