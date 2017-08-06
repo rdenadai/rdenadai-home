@@ -10,7 +10,7 @@ vars.append(('TIMEZONE', os.get('TIMEZONE')))
 vars.append(('SERVER_NAME', os.get('SERVER_NAME')))
 
 with open('configuration.yaml', 'r') as hr:
-    with open('/home/.homeassistant/configuration.yaml', 'w') as hw:
+    with open('/root/.homeassistant/configuration.yaml', 'w') as hw:
         f = hr.read()
         for var in vars:
             f.replace('<{}>'.format(var[0]), var[1])
