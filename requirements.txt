@@ -19,13 +19,11 @@ sympy
 scikit-learn
 scikit-image
 pyenchant
+ipython[all]
 
-aiohttp
-cchardet
-aiodns
-uvloop
-ujson
+aiohttp cchardet aiodns uvloop ujson
 
+py-cpuinfo
 distro
 xmltodict
 netdisco

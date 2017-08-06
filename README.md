@@ -1,7 +1,9 @@
-# rdenadai-home
+# Raspberry + Home Assistant
 
 
-## Raspberry Pi, internet configuration
+### Raspberry Pi, internet configuration
+
+#### Change files:
 
 ```
 # /etc/network/interfaces
@@ -20,7 +22,7 @@ iface default inet dhcp
 ```
 
 ```
-#### /etc/wpa_supplicant/wpa_supplicant.conf
+# /etc/wpa_supplicant/wpa_supplicant.conf
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
