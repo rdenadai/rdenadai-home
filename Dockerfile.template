@@ -27,7 +27,7 @@ RUN sudo apt-get install -y \
     bluez \
     curl \
     poppler-utils \
-    curl \
+    htop \
 # Extra libs
     libraspberrypi-bin \
     enchant \
@@ -36,7 +36,7 @@ RUN sudo apt-get install -y \
     libatlas-base-dev libatlas-dev \
     libatlas3-base \
     gfortran \
-    libfreetype6-dev libxft-dev libpng12-dev \
+    libfreetype6 libfreetype6-dev libxft-dev libpng12-dev libjpeg-dev libtiff5 \
 # Python build dependencies
     libmemcached-dev \
     zlib1g-dev \
@@ -78,6 +78,13 @@ RUN pip install -r /requirements.txt
 
 # This will copy all files in our root to the working  directory in the container
 COPY . ./
+
+RUN mkdir /root/.homeassistant/
+RUN touch /root/.homeassistant/configuration.yaml
+
+RUN mkdir /root/duckdns
+RUN touch /root/duckdns/duck.sh
+Run chmod 700 duck.sh
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
