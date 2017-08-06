@@ -34,6 +34,7 @@ RUN apt-get install -y \
     libatlas-base-dev libatlas-dev \
     libatlas3-base \
     gfortran \
+    libfreetype6-dev libxft-dev libpng12-dev \
 # Python build dependencies
     libmemcached-dev \
     zlib1g-dev \
