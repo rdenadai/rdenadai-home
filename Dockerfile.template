@@ -84,7 +84,7 @@ RUN touch /root/.homeassistant/configuration.yaml
 
 RUN mkdir /root/duckdns
 RUN touch /root/duckdns/duck.sh
-Run chmod 700 duck.sh
+Run chmod 700 /root/duckdns/duck.sh
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
