@@ -4,4 +4,4 @@ hass --open-ui &
 
 service nginx start &
 
-duckdns/duck.sh
+/root/duckdns/duck.sh
