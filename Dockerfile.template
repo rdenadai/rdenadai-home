@@ -13,31 +13,28 @@ RUN apt-get update
 RUN apt-get install -y gcc sqlite3 libsqlite3-dev python3-dev
 
 RUN apt-get install -y \
-    enchant \
-    postgresql-server-dev-all \
-    gcc g++ \
     sqlite3 \
     libsqlite3-dev \
     python3-dev \
-    gcc g++ musl-dev python3-dev cmake make \
-    liblapack-dev liblapack3 \
-    libblas3 \
-    poppler-utils \
-    curl \
-    libatlas-base-dev libatlas-dev \
-    libatlas3-base \
-    gfortran \
+    postgresql-server-dev-all \
+    gcc g++ musl-dev cmake make \
     libwebp-dev libwebp5 \
+    openssh-client \
+    libffi-dev \
     nmap \
     net-tools \
     bluez \
     curl \
-    openssh-client \
-    libffi-dev
-
-
+    poppler-utils \
+    curl \
+# Extra libs
+    enchant \
+    liblapack-dev liblapack3 \
+    libblas3 \
+    libatlas-base-dev libatlas-dev \
+    libatlas3-base \
+    gfortran \
 # Python build dependencies
-RUN apt-get install -y \
     libmemcached-dev \
     zlib1g-dev \
     libssl-dev \
