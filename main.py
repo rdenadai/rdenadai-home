@@ -1,14 +1,14 @@
 import os
 
 vars = []
-vars.append(('URL_DUCKDNS', os.get('URL_DUCKDNS')))
-vars.append(('ELEVATION', os.get('ELEVATION')))
-vars.append(('LAT', os.get('LAT')))
-vars.append(('LNG', os.get('LNG')))
-vars.append(('OPEN_WEATHER_KEY', os.get('OPEN_WEATHER_KEY')))
-vars.append(('SERVER_NAME', os.get('SERVER_NAME')))
-vars.append(('TIMEZONE', os.get('TIMEZONE')))
-vars.append(('SERVER_NAME', os.get('SERVER_NAME')))
+vars.append(('URL_DUCKDNS', os.getenv('URL_DUCKDNS')))
+vars.append(('ELEVATION', os.getenv('ELEVATION')))
+vars.append(('LAT', os.getenv('LAT')))
+vars.append(('LNG', os.getenv('LNG')))
+vars.append(('OPEN_WEATHER_KEY', os.getenv('OPEN_WEATHER_KEY')))
+vars.append(('SERVER_NAME', os.getenv('SERVER_NAME')))
+vars.append(('TIMEZONE', os.getenv('TIMEZONE')))
+vars.append(('SERVER_NAME', os.getenv('SERVER_NAME')))
 
 with open('configuration.yaml', 'r') as hr:
     with open('/root/.homeassistant/configuration.yaml', 'w') as hw:
