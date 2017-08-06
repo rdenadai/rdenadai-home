@@ -1,35 +1,18 @@
 psycopg2
-
 xhtml2pdf
 click
-
 requests
 beautifulsoup4
-
-numpy
-nltk
-textblob
-gensim
-Pillow
-cython
-scipy
-matplotlib
-pandas
-sympy
-scikit-learn
-scikit-image
-
-pyenchant
-
 gunicorn
 uwsgi
+
+numpy
 
 aiohttp
 cchardet
 aiodns
 uvloop
 ujson
-
 
 distro
 xmltodict
