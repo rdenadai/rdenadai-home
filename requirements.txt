@@ -6,6 +6,21 @@ beautifulsoup4
 gunicorn
 uwsgi
 
+numpy
+nltk
+textblob
+Pillow
+cython
+scipy
+matplotlib
+pandas
+gensim
+sympy
+scikit-learn
+scikit-image
+pyenchant
+ipython[all]
+
 aiohttp
 cchardet
 aiodns
