@@ -79,12 +79,17 @@ RUN pip install -r /requirements.txt
 # This will copy all files in our root to the working  directory in the container
 COPY . ./
 
+RUN mkdir /root/.jupyter/
+RUN touch /root/.jupyter/jupyter_notebook_config.py
+
 RUN mkdir /root/.homeassistant/
 RUN touch /root/.homeassistant/configuration.yaml
 
 RUN mkdir /root/duckdns
 RUN touch /root/duckdns/duck.sh
 Run chmod 700 /root/duckdns/duck.sh
+
+Run chmod 700 /usr/src/app/main.sh
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
@@ -93,5 +98,4 @@ CMD modprobe i2c-dev
 CMD modprobe bcm2835-v4l2
 
 # main.py will run when container starts up on the device
-CMD ["python", "main.py"]
 CMD ["bash", "main.sh"]

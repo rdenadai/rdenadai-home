@@ -1,32 +1,21 @@
 import os
 
+
 vars = []
-vars.append(('URL_DUCKDNS', os.getenv('URL_DUCKDNS')))
-vars.append(('ELEVATION', os.getenv('ELEVATION')))
-vars.append(('LAT', os.getenv('LAT')))
-vars.append(('LNG', os.getenv('LNG')))
-vars.append(('OPEN_WEATHER_KEY', os.getenv('OPEN_WEATHER_KEY')))
-vars.append(('SERVER_NAME', os.getenv('SERVER_NAME')))
-vars.append(('TIMEZONE', os.getenv('TIMEZONE')))
-vars.append(('SERVER_NAME', os.getenv('SERVER_NAME')))
+for name in ['JUPYTER_PASSWORD', 'SERVER_NAME', 'URL_DUCKDNS', 'ELEVATION', 'LAT', 'LNG', 'OPEN_WEATHER_KEY', 'SERVER_NAME', 'TIMEZONE']:
+    vars.append((name, os.getenv(name)))
 
-with open('configuration.yaml', 'r') as hr:
-    with open('/root/.homeassistant/configuration.yaml', 'w') as hw:
-        f = hr.read()
-        for var in vars:
-            f.replace('<{}>'.format(var[0]), var[1])
-        hw.write(f)
 
-with open('nginx.conf', 'r') as hr:
-    with open('/etc/nginx/sites-available/default', 'w') as hw:
-        f = hr.read()
-        for var in vars:
-            f.replace('<{}>'.format(var[0]), var[1])
-        hw.write(f)
+def make_file(finput, foutput):
+    with open(finput, 'r') as hr:
+        with open(foutput, 'w') as hw:
+            f = hr.read()
+            for var in vars:
+                f = f.replace('<{}>'.format(var[0]), var[1])
+            hw.write(f)
 
-with open('duckdns.conf', 'r') as hr:
-    with open('/root/duckdns/duck.sh', 'w') as hw:
-        f = hr.read()
-        for var in vars:
-            f.replace('<{}>'.format(var[0]), var[1])
-        hw.write(f)
+
+make_file('jupyter_notebook_config.py', '/root/.jupyter/jupyter_notebook_config.py')
+make_file('configuration.yaml', '/root/.homeassistant/configuration.yaml')
+make_file('nginx.conf', '/etc/nginx/sites-available/default')
+make_file('duckdns.conf', '/root/duckdns/duck.sh')

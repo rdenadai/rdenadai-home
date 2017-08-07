@@ -1,9 +1,11 @@
 #!/usr/bin/bash
 
-hass --open-ui &
-
-jupyter notebook --ip=0.0.0.0 --port=8181 --no-browser &
+python /usr/src/app/main.py
 
 service nginx start &
 
-/root/duckdns/duck.sh
+hass --open-ui &
+
+jupyter notebook --ip=0.0.0.0 --port=8181 --no-browser -y &
+
+/root/duckdns/duck.sh &

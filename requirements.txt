@@ -1,3 +1,7 @@
+line-profiler
+psutil
+memory_profiler
+
 psycopg2
 xhtml2pdf
 click
@@ -20,6 +24,7 @@ scikit-learn
 scikit-image
 pyenchant
 ipython[all]
+jupyter_contrib_nbextensions
 
 aiohttp
 cchardet
