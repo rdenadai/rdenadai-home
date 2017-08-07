@@ -81,13 +81,17 @@ COPY . ./
 
 RUN mkdir /root/.jupyter/
 RUN touch /root/.jupyter/jupyter_notebook_config.py
+Run chmod 700 /root/.jupyter/jupyter_notebook_config.py
 
 RUN mkdir /root/.homeassistant/
 RUN touch /root/.homeassistant/configuration.yaml
+Run chmod 700 /root/.homeassistant/configuration.yaml
 
 RUN mkdir /root/duckdns
 RUN touch /root/duckdns/duck.sh
+RUN touch /root/duckdns/duck.log
 Run chmod 700 /root/duckdns/duck.sh
+Run chmod 700 /root/duckdns/duck.log
 
 Run chmod 700 /usr/src/app/main.sh
 

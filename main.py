@@ -2,7 +2,7 @@ import os
 
 
 vars = []
-for name in ['JUPYTER_PASSWORD', 'SERVER_NAME', 'URL_DUCKDNS', 'ELEVATION', 'LAT', 'LNG', 'OPEN_WEATHER_KEY', 'SERVER_NAME', 'TIMEZONE']:
+for name in ['HOME_ASSISTANT_PASSWORD', 'JUPYTER_PASSWORD', 'SERVER_NAME', 'URL_DUCKDNS', 'ELEVATION', 'LAT', 'LNG', 'OPEN_WEATHER_KEY', 'SERVER_NAME', 'TIMEZONE']:
     vars.append((name, os.getenv(name)))
 
 

@@ -6,6 +6,6 @@ service nginx start &
 
 hass --open-ui &
 
-jupyter notebook --ip=0.0.0.0 --port=8181 --no-browser -y &
+jupyter notebook --ip=0.0.0.0 --port=8585 --no-browser -y &
 
 /root/duckdns/duck.sh &
