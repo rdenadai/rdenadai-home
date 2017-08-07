@@ -65,9 +65,9 @@ device_tracker:
     home_interval: 30
 
 camera:
-  - platform: generic
-    name: Camera
-    still_image_url: http://localhost/image.jpg
+  - platform: rpi_camera
+    name: Raspberry Pi Camera
+    timelapse: 2500
 
 weather:
   - platform: openweathermap

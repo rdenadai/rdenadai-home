@@ -83,9 +83,10 @@ RUN mkdir /root/.jupyter/
 RUN touch /root/.jupyter/jupyter_notebook_config.py
 Run chmod 700 /root/.jupyter/jupyter_notebook_config.py
 
-RUN mkdir /root/.homeassistant/
-RUN touch /root/.homeassistant/configuration.yaml
-Run chmod 700 /root/.homeassistant/configuration.yaml
+# OLD EXECUTION...
+# RUN mkdir /root/.homeassistant/
+# RUN touch /root/.homeassistant/configuration.yaml
+# Run chmod 700 /root/.homeassistant/configuration.yaml
 
 RUN mkdir /root/duckdns
 RUN touch /root/duckdns/duck.sh
@@ -101,5 +102,5 @@ ENV INITSYSTEM on
 CMD modprobe i2c-dev
 CMD modprobe bcm2835-v4l2
 
-# main.py will run when container starts up on the device
+# main.sh will run when container starts up on the device
 CMD ["bash", "main.sh"]
