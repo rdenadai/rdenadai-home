@@ -32,6 +32,8 @@ aiodns
 uvloop
 ujson
 
+nmap
+pyowm
 py-cpuinfo
 distro
 xmltodict
