@@ -14,7 +14,7 @@ python /usr/src/app/main.py
 
 echo "Starting Home Assistant."
 
-hass --open-ui &
+hass &
 
 echo "Starting jupyter notebooks."
 
