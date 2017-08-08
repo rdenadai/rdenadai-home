@@ -1,4 +1,4 @@
 import subprocess
 
 
-subprocess.call(['/usr/src/app/main.sh'])
+subprocess.call(['/bin/bash', '/usr/src/app/main.sh'])
