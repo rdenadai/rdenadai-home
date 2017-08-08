@@ -214,7 +214,7 @@ c.NotebookApp.base_project_url = '/jupyter/'
 #    from notebook.auth import passwd; passwd()
 #  
 #  The string should be of the form type:salt:hashed-password.
-c.NotebookApp.password = '<JUPYTER_PASSWORD>'
+c.NotebookApp.password = u'<JUPYTER_PASSWORD>'
 
 ## Forces users to use a password for the Notebook server. This is useful in a
 #  multi user environment, for instance when everybody in the LAN can access each
