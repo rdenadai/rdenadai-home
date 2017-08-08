@@ -1,5 +1,8 @@
 #!/bin/bash
 
+modprobe i2c-dev
+modprobe bcm2835-v4l2
+
 python /usr/src/app/main.py
 
 hass --open-ui &

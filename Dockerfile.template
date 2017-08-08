@@ -91,6 +91,7 @@ RUN touch /root/.homeassistant/configuration.yaml
 RUN chmod 700 /root/.homeassistant/configuration.yaml
 RUN cp /usr/src/app/hass.io/automations.yaml /root/.homeassistant/automations.yaml
 RUN cp /usr/src/app/hass.io/groups.yaml /root/.homeassistant/groups.yaml
+RUN cp /usr/src/app/hass.io/known_devices.yaml /root/.homeassistant/known_devices.yaml
 
 RUN mkdir /root/duckdns
 RUN touch /root/duckdns/duck.sh
@@ -99,14 +100,10 @@ Run chmod 700 /root/duckdns/duck.sh
 Run chmod 700 /root/duckdns/duck.log
 RUN echo "*/5 * * * * root/duckdns/duck.sh >/dev/null 2>&1" | crontab
 
-
-Run chmod 700 /usr/src/app/main.sh
+RUN chmod +x /usr/src/app/main.sh
 
 # switch on systemd init system in container
 ENV INITSYSTEM on
-
-CMD modprobe i2c-dev
-CMD modprobe bcm2835-v4l2
 
 # main.sh will run when container starts up on the device
 CMD ["bash", "main.sh"]
