@@ -1,11 +1,5 @@
 #!/bin/bash
 
-hass --open-ui &
-
-sleep 15
-
-kill $(ps aux | grep '.pyenv' | awk '{print $2}')
-
 python /usr/src/app/main.py
 
 hass --open-ui &

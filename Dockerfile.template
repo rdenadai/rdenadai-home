@@ -13,6 +13,7 @@ RUN apt-get update
 RUN apt-get install -y gcc sqlite3 libsqlite3-dev python3-dev
 
 RUN sudo apt-get install -y \
+    cron \
     nginx \
     sqlite3 \
     libsqlite3-dev \
@@ -84,15 +85,20 @@ RUN touch /root/.jupyter/jupyter_notebook_config.py
 Run chmod 700 /root/.jupyter/jupyter_notebook_config.py
 
 # OLD EXECUTION...
-# RUN mkdir /root/.homeassistant/
-# RUN touch /root/.homeassistant/configuration.yaml
-# Run chmod 700 /root/.homeassistant/configuration.yaml
+RUN mkdir /root/.homeassistant/
+RUN mkdir /root/.homeassistant/tts
+RUN touch /root/.homeassistant/configuration.yaml
+RUN chmod 700 /root/.homeassistant/configuration.yaml
+RUN cp /usr/src/app/hass.io/automations.yaml /root/.homeassistant/automations.yaml
+RUN cp /usr/src/app/hass.io/groups.yaml /root/.homeassistant/groups.yaml
 
 RUN mkdir /root/duckdns
 RUN touch /root/duckdns/duck.sh
 RUN touch /root/duckdns/duck.log
 Run chmod 700 /root/duckdns/duck.sh
 Run chmod 700 /root/duckdns/duck.log
+RUN echo "*/5 * * * * root/duckdns/duck.sh >/dev/null 2>&1" | crontab
+
 
 Run chmod 700 /usr/src/app/main.sh
 
