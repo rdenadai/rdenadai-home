@@ -44,7 +44,6 @@ scikit-image
 statsmodels
 astropy
 skyfield
-h5py
 
 ipython[all]
 jupyter_contrib_nbextensions
