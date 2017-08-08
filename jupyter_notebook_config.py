@@ -62,7 +62,7 @@
 #c.NotebookApp.allow_root = False
 
 ## DEPRECATED use base_url
-#c.NotebookApp.base_project_url = '/'
+c.NotebookApp.base_project_url = '/jupyter/'
 
 ## The base URL for the notebook server.
 #  
@@ -267,7 +267,7 @@ c.NotebookApp.password = '<JUPYTER_PASSWORD>'
 ## Whether to trust or not X-Scheme/X-Forwarded-Proto and X-Real-Ip/X-Forwarded-
 #  For headerssent by the upstream reverse proxy. Necessary if the proxy handles
 #  SSL
-#c.NotebookApp.trust_xheaders = False
+c.NotebookApp.trust_xheaders = True
 
 ## DEPRECATED, use tornado_settings
 #c.NotebookApp.webapp_settings = {}

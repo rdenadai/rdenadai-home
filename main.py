@@ -16,6 +16,6 @@ def make_file(finput, foutput):
 
 
 make_file('jupyter_notebook_config.py', '/root/.jupyter/jupyter_notebook_config.py')
-make_file('configuration.yaml', '/root/.homeassistant/configuration.yaml')
+make_file('hass.io/configuration.yaml', '/root/.homeassistant/configuration.yaml')
 make_file('nginx.conf', '/etc/nginx/sites-available/default')
 make_file('duckdns.conf', '/root/duckdns/duck.sh')
