@@ -1,13 +1,5 @@
 #!/bin/bash
 
-echo "Modprobe i2c-dev."
-
-modprobe i2c-dev
-
-echo "Modprobe bcm2835-v4l2."
-
-modprobe bcm2835-v4l2
-
 echo "Python main.py environment vars."
 
 python /usr/src/app/main.py
