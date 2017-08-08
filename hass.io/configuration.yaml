@@ -68,6 +68,7 @@ camera:
   - platform: rpi_camera
     name: Raspberry Pi Camera
     timelapse: 2500
+    file_path: /tmp/image.jpg
 
 weather:
   - platform: openweathermap
