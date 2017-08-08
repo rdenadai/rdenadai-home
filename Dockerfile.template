@@ -106,4 +106,4 @@ RUN chmod +x /usr/src/app/main.sh
 ENV INITSYSTEM on
 
 # main.sh will run when container starts up on the device
-CMD ["/bin/sh", "main.sh"]
+CMD ["/bin/sh", "/usr/src/app/main.sh"]
