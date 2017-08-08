@@ -45,8 +45,6 @@ statsmodels
 astropy
 skyfield
 h5py
-tensorflow
-keras
 
 ipython[all]
 jupyter_contrib_nbextensions
