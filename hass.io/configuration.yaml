@@ -74,7 +74,7 @@ weather:
   - platform: openweathermap
     name: Tempo
     api_key: <OPEN_WEATHER_KEY>
-    forecast: 1
+    forecast: 0
     monitored_conditions:
       - weather
       - temperature
