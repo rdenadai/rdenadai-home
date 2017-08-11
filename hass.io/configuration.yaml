@@ -59,6 +59,11 @@ sensor:
       - type: memory_use_percent
       - type: processor_use
 
+weather:
+  - platform: yweather
+    name: Tempo
+    woeid: <YAHOO_WOEID>
+
 device_tracker:
   - platform: nmap_tracker
     hosts: 192.168.0.1-255
@@ -67,22 +72,11 @@ device_tracker:
 camera:
   - platform: rpi_camera
     name: Raspberry Pi Camera
-    timelapse: 2500
+    timelapse: 1500
     file_path: /tmp/image.jpg
 
-weather:
-  - platform: openweathermap
-    name: Tempo
-    api_key: <OPEN_WEATHER_KEY>
-    forecast: 0
-    monitored_conditions:
-      - weather
-      - temperature
-      - wind_speed
-      - humidity
-      - pressure
-      - clouds
-      - rain
+ifttt:
+  key: <IFTTT_KEY>
 
 # Text to speech
 tts:
